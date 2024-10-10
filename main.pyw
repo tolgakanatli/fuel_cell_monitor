@@ -1,6 +1,6 @@
 from gui.tabs.main import main_window           
 try:
-    import pyi_splash
+    import pyi_splash # type: ignore
 except:
     pass
        
