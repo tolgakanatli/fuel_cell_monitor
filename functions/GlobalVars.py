@@ -169,9 +169,6 @@ class GlobalVar:
         if self.widget and self.widget_type:
             interimval = self.get_widget_value()
             
-        if self.data_type:
-            interimval = self.data_type(interimval)
-            
         if self.getterfunc:
             interimval = self.getterfunc(interimval)
 

@@ -65,7 +65,7 @@ class analysis_frame(ctk.CTkFrame):
             parentdata = self.analysis_list.item(parent).get("values")[:colcount]
             for data, name in zip(parentdata, gv.usedvars):
                 allitems.append((name,data,""))
-            allitems.append(const["dataheaders_long"])
+            allitems.append(const.dataheaders_long)
             for child in self.analysis_list.get_children(parent):
                 childdata = self.analysis_list.item(child).get("values")[-3:]
                 allitems.append(childdata)

@@ -59,16 +59,3 @@ class constants:
     dataheaders_long = ["Voltage \n(V)", "Current Density \n(mA/cm2)", "Power Density \n(mW/cm2)"]
 
 const = constants()
-
-
-
-
-        
-
-
-
-
-
-        
-        
-    

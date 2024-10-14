@@ -52,11 +52,9 @@ class settings_frame(ctk.CTkScrollableFrame):
         self.spd_label = ctk.CTkLabel(master=self, text="Scan interval \n(seconds):")
         self.speed_slider = spinbox(master=self,min=1,max=5, increment=1, initial=1,integer=True)
         self.auto_process_bool = ctk.BooleanVar(value=True)
-        self.auto_process_switch= ctk.CTkSwitch(master=self, text="Automatically process new files after a set amount of time", variable=self.auto_process_bool)
-        self.wait_label = ctk.CTkLabel(master=self, text="Process after \n(minutes):")
+        self.auto_process_switch= ctk.CTkSwitch(master=self, text="Automatically process new files when they become available", variable=self.auto_process_bool)
+        self.wait_label = ctk.CTkLabel(master=self, text="Monitor interval \n(seconds):")
         self.wait_entry = spinbox(master=self,min=1, max=15, increment=1, initial=5,integer=True)
-        self.passes_label = ctk.CTkLabel(master=self, text="Filesize should remain the same for this many passes before auto processing:")
-        self.passes_entry = spinbox(master=self, min=1, max=5, increment=1, initial=3,integer=True)
         
         self. sepeartor4 = ttk.Separator(master=self, orient="horizontal")
         
@@ -104,8 +102,6 @@ class settings_frame(ctk.CTkScrollableFrame):
         self.auto_process_switch.grid(row=12, column=1, columnspan=2, **Padding, sticky="w")
         self.wait_label.grid(row=13,column=0, **Padding, sticky="e")
         self.wait_entry.grid(row=13,column=1, **Padding, sticky="w")
-        self.passes_label.grid(row=14,column=0,columnspan=3,**Padding, sticky="w")
-        self.passes_entry.grid(row=15,column=1, **Padding, sticky="w")
 
         self. sepeartor4.grid(row=16, column=0,columnspan=3, **Padding, sticky="ew")
         
@@ -154,7 +150,6 @@ class settings_frame(ctk.CTkScrollableFrame):
         cm.register("speed_slider", self.speed_slider, "scale", "int")
         cm.register("auto_process_bool", self.auto_process_bool, "checkbutton", "bool")
         cm.register("wait_entry", self.wait_entry, "scale", "int")
-        cm.register("passes_entry", self.passes_entry, "scale", "int")
         cm.register("style_box", self.style_box, "combobox", "str", section="Init")
         cm.register("darkmode_bool", self.darkmode_bool, "checkbutton", "bool", section="Init")
         cm.register("font_size_entry", self.font_size_entry, "scale", "int", section="Init", load_command=self.apply_font_changes)

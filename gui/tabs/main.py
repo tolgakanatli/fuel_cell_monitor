@@ -5,7 +5,7 @@ from gui import Padding, Styler
 from gui.tabs import *
 from functions.utility import log_message 
 from functions.config_manager import ConfigManager, get_init_configs
-from functions.file_manager import FileManager
+from functions.file_processing import FileManager
 from functions.GlobalVars import GlobalVar, GlobalVars
 gv = GlobalVars()
     
