@@ -160,7 +160,6 @@ class FileManager():
         #file processing
 
         if newnames is None:
-            print("newnames is none")
             newnames = []
             for filename in files:
                 newnames.append(self.get_filename(filename))
