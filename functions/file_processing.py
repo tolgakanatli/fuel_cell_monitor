@@ -206,11 +206,14 @@ class FileManager():
             #calculate densities and max values
             df = pd.DataFrame([val.strip().split(',') for val in lines[7:]], columns=const.dataheaders)
             df = df.apply(pd.to_numeric, errors='coerce')
+            df[['Current', 'Voltage']] = df[['Voltage', 'Current']]
+            df = df.rename(columns={'Current': 'Voltage', 'Voltage': 'Current'})
+            
             area = float(cell_area) if float(cell_area) else 1                
             df[["Current", "Power"]] = df[["Current", "Power"]] * (1000 / area)
             df = df.round(2)
             maxid = df["Power"].idxmax()                             
-            var_vals.extend(df.loc[maxid].to_list())
+            var_vals.extend(df.loc[maxid, ["Current", "Voltage", "Power"]].to_list())
             
             #input data into the treeview
             just_filename = os.path.splitext(final_filename)[0]                        

@@ -56,6 +56,6 @@ class Styler:
 @dataclass(frozen=True)
 class constants:
     dataheaders = ["Voltage", "Current", "Power"]
-    dataheaders_long = ["Voltage \n(V)", "Current Density \n(mA/cm2)", "Power Density \n(mW/cm2)"]
+    dataheaders_long = ["Current Density \n(mA/cm2)", "Voltage \n(V)", "Power Density \n(mW/cm2)"]
 
 const = constants()
