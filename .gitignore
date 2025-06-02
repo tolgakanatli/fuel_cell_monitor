@@ -6,3 +6,5 @@ testing/
 virt_env/
 build/
 dist/
+clean/
+distvenv/

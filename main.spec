@@ -1,5 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
-
+import PyInstaller.config
+PyInstaller.config.CONF['distpath']='C:\\py\\fc_clean\\dist'
+PyInstaller.config.CONF['workpath']='C:\\py\\fc_clean\\build'
 
 a = Analysis(
     ['main.pyw'],
