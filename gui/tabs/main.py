@@ -24,7 +24,7 @@ class main_window(ctk.CTk):
             ctk.set_appearance_mode("system")  # Modes: system (default), light, dark
         
         super().__init__()
-        self.title("File Analyzer")
+        self.title("Experiment Monitor")
         self.geometry("800x600")
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)

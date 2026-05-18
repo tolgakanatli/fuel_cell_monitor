@@ -3,7 +3,7 @@ import os, sys, shutil
 from gui import const
 from .utility import format_number, log_message
 from tkinter import simpledialog, messagebox
-from .FlexibleLoop import FlexibleWhile
+
 from .GlobalVars import GlobalVars
 gv = GlobalVars()
 
@@ -123,18 +123,20 @@ class FileManager():
             input_path = resolve_path(input_file)
             output_path = resolve_path(output_file,False)
             copyit = True
-            #check for existing files, if exists add _2 to the name                
+            #check for existing files, if exists add (2) to the name                
             if os.path.exists(output_path):
                 if files_are_identical(input_path, output_path):
                     copyit = False                  
                 log_message(f"File {output_file} already exists. Finding a new filename")
-
-                for output_path, i in FlexibleWhile(before_func=lambda p, i: (os.path.join(gv.output_directory, f"{output_file[:-4]} ({i}).txt"),i+1),
-                                            cond_func= lambda p,i: os.path.exists(p),
-                                            start_vals= ("", 2)):
-                    if files_are_identical(input_path,output_path):
-                        copyit = False
-                                 
+                i = 1
+                name, extension = os.path.splitext(output_file)
+                while True:
+                    newpath = os.path.join(gv.output_directory, f"{name} ({i}){extension}")
+                    if not os.path.exists(newpath):
+                        output_path = newpath
+                        break
+                    i += 1
+                                                     
             final_filename = os.path.basename(output_path)
             final_filename = os.path.splitext(final_filename)[0]
             
