@@ -117,4 +117,4 @@ PhD in Chemical Engineering — PEM Fuel Cells & Hydrogen Production
 
 ## License
 
-MIT License
+This project is licensed under [CC BY-NC 4.0](LICENSE) — free to use with attribution, no commercial use.
