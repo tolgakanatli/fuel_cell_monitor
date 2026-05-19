@@ -48,6 +48,10 @@ Processed experiments are listed with their extracted parameters. Rows can be ex
 
 ## Installation
 
+Download the latest release from the [Releases](https://github.com/tolgakanatli/fuel_cell_monitor/releases) page, extract the zip file, and run `main.exe`.
+
+**Windows only.**
+
 ### Run from source
 
 **Requirements:** Python 3.10+
